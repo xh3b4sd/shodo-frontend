@@ -21,27 +21,46 @@ body,
   justify-content: center;
 }
 
-img {
+.cell img.image {
   width: 100%;
 }
 
 .link-container {
-  bottom: 20%;
-  float: left;
+  bottom: 10px;
   position: absolute;
-  text-align: center;
-  width: 50%;
+  width: 100%;
 }
 
-.link-container.view-token {
-  margin-left: 50%;
+.link-container div {
+  /* background-color: cadetblue; */
+  margin-right: 10px;
+  float: right;
 }
 
-.link {
+.link-container .view-token span {
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.link-container .invert-token span {
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.link-container .view-token svg {
+  font-size: 26px;
+}
+
+.link-container .invert-token svg {
+  font-size: 20px;
+}
+
+.link-container .link {
   text-decoration: none;
-  display: none;
 }
 
-.cell:hover .link {
-  display: block;
+.link-container Button {
+  line-height: 18px;
+  font-size: 17px;
+  padding: 6px;
 }
