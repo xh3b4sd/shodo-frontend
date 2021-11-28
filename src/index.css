@@ -16,11 +16,32 @@ body,
 
 .ListItemEven,
 .ListItemOdd {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
 img {
   width: 100%;
+}
+
+.link-container {
+  bottom: 20%;
+  float: left;
+  position: absolute;
+  text-align: center;
+  width: 50%;
+}
+
+.link-container.view-token {
+  margin-left: 50%;
+}
+
+.link {
+  text-decoration: none;
+  display: none;
+}
+
+.cell:hover .link {
+  display: block;
 }
