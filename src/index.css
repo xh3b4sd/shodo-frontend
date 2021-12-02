@@ -21,46 +21,81 @@ body,
   justify-content: center;
 }
 
-.cell img.image {
+.cell .image {
   width: 100%;
 }
 
-.link-container {
+.cell .link-container {
   bottom: 10px;
   position: absolute;
   width: 100%;
 }
 
-.link-container div {
-  /* background-color: cadetblue; */
-  margin-right: 10px;
+.cell .link-container .invert-token,
+.cell .link-container .view-token {
+  border-radius: 4px;
+  float: left;
+  margin-left: 10px;
+}
+
+.cell .link-container .mint-token {
+  border-radius: 4px;
   float: right;
+  margin-right: 10px;
 }
 
-.link-container .view-token span {
+.cell.even .link-container .mint-token:hover,
+.cell.even .link-container .invert-token:hover,
+.cell.even .link-container .view-token:hover {
+  background-color: black;
+}
+
+.cell.uneven .link-container .mint-token:hover,
+.cell.uneven .link-container .invert-token:hover,
+.cell.uneven .link-container .view-token:hover {
+  background-color: white;
+}
+
+.cell.even .link-container .load-token:hover,
+.cell.uneven .link-container .load-token:hover {
+  cursor: default;
+}
+
+.cell .link-container .view-token span {
+  border-radius: 4px;
   padding: 2px;
-  border-radius: 4px;
 }
 
-.link-container .invert-token span {
+.cell .link-container .invert-token span {
+  border-radius: 4px;
   padding: 5px;
-  border-radius: 4px;
 }
 
-.link-container .view-token svg {
+.cell .link-container .view-token svg {
   font-size: 26px;
 }
 
-.link-container .invert-token svg {
+.cell .link-container .invert-token svg {
   font-size: 20px;
 }
 
-.link-container .link {
+.cell .link-container .link {
   text-decoration: none;
 }
 
-.link-container Button {
-  line-height: 18px;
+.cell .link-container .mint-token .button {
   font-size: 17px;
+  line-height: 18px;
   padding: 6px;
+}
+
+.cell .link-container .load-token {
+  float: right;
+  font-size: 17px;
+  line-height: 18px;
+  margin-right: 10px;
+  padding: 6px;
+  color: #d32f2f;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
 }

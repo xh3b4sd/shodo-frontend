@@ -35,26 +35,19 @@ function loadMoreItems(startIndex, stopIndex) {
   );
 }
 
-function newCell({ columnIndex, rowIndex, style }) {
-  return (<Cell columnIndex={columnIndex} rowIndex={rowIndex} style={style} />);
-}
 
 function App() {
   return (
     <BrowserRouter>
       <AutoSizer>
         {function ({ height, width }) {
-          let cnt = 4;
+          let cnt = 5;
 
-          if (width < 1300) {
+          if (width < 1200) {
             cnt = 3;
           }
 
-          if (width < 900) {
-            cnt = 2;
-          }
-
-          if (width < 500) {
+          if (width < 700) {
             cnt = 1;
           }
 
@@ -76,7 +69,11 @@ function App() {
                   rowHeight={width / cnt / 0.5416248746}
                   width={width}
                 >
-                  {newCell}
+                  {
+                    function ({ columnIndex, rowIndex, style }) {
+                      return (<Cell columnCount={cnt} columnIndex={columnIndex} rowIndex={rowIndex} style={style} />);
+                    }
+                  }
                 </FixedSizeGrid>
               )}
             </InfiniteLoader>
