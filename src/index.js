@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { FixedSizeGrid } from 'react-window';
 import AutoSizer from "react-virtualized-auto-sizer";
 import InfiniteLoader from "react-window-infinite-loader";
-import Cell from "./cell.js";
+import * as cell from "./component/cell.js";
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -71,7 +71,7 @@ function App() {
                 >
                   {
                     function ({ columnIndex, rowIndex, style }) {
-                      return (<Cell columnCount={cnt} columnIndex={columnIndex} rowIndex={rowIndex} style={style} />);
+                      return (<cell.Component columnCount={cnt} columnIndex={columnIndex} rowIndex={rowIndex} style={style} />);
                     }
                   }
                 </FixedSizeGrid>
