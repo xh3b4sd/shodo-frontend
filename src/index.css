@@ -25,6 +25,10 @@ body,
   width: 100%;
 }
 
+.cell.empty .link-container {
+  display: none;
+}
+
 .cell .link-container {
   bottom: 10px;
   position: absolute;

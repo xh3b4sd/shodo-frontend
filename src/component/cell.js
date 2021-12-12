@@ -6,9 +6,11 @@ import IconButton from '@mui/material/IconButton';
 import { QueryClient, QueryClientProvider } from "react-query";
 import * as tokenid from "../module/token_id";
 import * as mintbutton from "../component/mintbutton";
-import * as image from "../component/image";
+import * as image from "./image";
+import * as contract from "../module/contract";
 
 const queryClient = new QueryClient();
+const circulating = contract.CirculatingSupply();
 
 function evenClassNameFromTokenID(tid) {
 	let className = "";
@@ -17,6 +19,10 @@ function evenClassNameFromTokenID(tid) {
 		className = "even";
 	} else {
 		className = "uneven";
+	}
+
+	if (tid >= circulating) {
+		className = "empty";
 	}
 
 	return className;

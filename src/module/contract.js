@@ -1,5 +1,5 @@
 export function CirculatingSupply() {
-	return 35;
+	return TokensWithPagination(0).length;
 }
 
 export function MintPrice() {
