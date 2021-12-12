@@ -24,9 +24,9 @@
     "react-window-infinite-loader": "^1.0.7"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-scripts --openssl-legacy-provider start --no-cache",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "test": "react-scripts test --no-cache",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
