@@ -10,7 +10,7 @@ import * as image from "./image";
 import * as contract from "../module/contract";
 
 const queryClient = new QueryClient();
-const circulating = contract.CirculatingSupply();
+const available = contract.AvailableSupply();
 
 function evenClassNameFromTokenID(tid) {
 	let className = "";
@@ -21,7 +21,7 @@ function evenClassNameFromTokenID(tid) {
 		className = "uneven";
 	}
 
-	if (tid >= circulating) {
+	if (tid >= available) {
 		className = "empty";
 	}
 
@@ -53,7 +53,7 @@ export class Component extends React.Component {
 	constructor(props) {
 		super(props);
 
-		let tokenID = tokenid.New(this.props.rowIndex, this.props.columnIndex, this.props.columnCount);
+		let tokenID = tokenid.Reverse(this.props.rowIndex, this.props.columnIndex, this.props.columnCount, this.props.listLength);
 
 		let evenClassName = evenClassNameFromTokenID(tokenID);
 		let tokenViewURL = newTokenViewURL(tokenID);

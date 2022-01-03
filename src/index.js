@@ -15,11 +15,11 @@ import "./index.css";
 
 const loading = 1;
 const loaded = 2;
-const circulating = contract.CirculatingSupply();
+const available = contract.AvailableSupply();
 
-let cir_5 = (circulating / 2) + 2;
-let cir_3 = (circulating / 2);
-let cir_1 = (circulating / 2);
+let cir_5 = (available / 2) + 2;
+let cir_3 = (available / 2);
+let cir_1 = (available / 2);
 let itemStatusMap = {};
 
 function isItemLoaded(index) {
@@ -80,7 +80,7 @@ function App() {
                 >
                   {
                     function ({ columnIndex, rowIndex, style }) {
-                      return (<cell.Component columnCount={cnt} columnIndex={columnIndex} rowIndex={rowIndex} style={style} />);
+                      return (<cell.Component columnCount={cnt} columnIndex={columnIndex} rowIndex={rowIndex} listLength={available} style={style} />);
                     }
                   }
                 </FixedSizeGrid>

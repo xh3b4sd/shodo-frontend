@@ -1,4 +1,4 @@
-export function CirculatingSupply() {
+export function AvailableSupply() {
 	return TokensWithPagination(0).length;
 }
 
